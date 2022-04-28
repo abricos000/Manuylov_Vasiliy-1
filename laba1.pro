@@ -18,4 +18,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     estackempty.h \
     estackexception.h \
+    person.h \
+    person_keeper.h \
     stack.h

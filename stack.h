@@ -2,6 +2,7 @@
 #define STACK_H
 #include "estackexception.h"
 #include "estackempty.h"
+#include <functional>
 
 template <class T>
 class Stack
@@ -12,7 +13,7 @@ public:
     void Clear(); // удаление из стека всех узлов
     void Push(const T &k); //Помещение объекта в стек;
     const T Pop(); // Извлечение объекта из стека;
-
+   void Print(std::function<void(const T &k)> f) const;//метод перебора значений
 
 private:
     struct Node
@@ -26,6 +27,18 @@ private:
 
     int size = 0;
 };
+//Метод перебора значений стека
+template <class T>void Stack<T>::Print(std::function<void(const T &k)> f) const
+{
+    Node *tmp = nd; // указатель на последний элемент
+
+    while (tmp != nullptr)
+    {
+        f(tmp->key); // вызов функции обратной связи
+
+        tmp = tmp->pr;//Указатель на предыдущий
+    }
+}
 //размерность стека
 template <class T> int Stack<T>::Size()
 {
