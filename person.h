@@ -33,7 +33,9 @@ Person::Person(QString f_name)//метод разбиения строки на 
 {
     QStringList str = f_name.split(QRegularExpression("\\s+"), Qt::SkipEmptyParts);//разбиение
     if (str.size() != 2 && str.size() != 3)//если размер строки не равен 2 , 3 ,то выводим сообщение в ошибке
-    { throw "Error size strok";}
+    {
+        throw "Error size strok";
+    }
     l_name = str[0];//присваиваем фамилию
     f_name = str[1];//присваиваем имя
     if (str.size() == 3)
