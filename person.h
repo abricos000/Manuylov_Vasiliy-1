@@ -29,9 +29,9 @@ public:
 
 };
 
-Person::Person(QString f_name)//метод разбиения строки на подстроки:фамилия , имя , отчество.Личность может не имять отчество.
+Person::Person(QString full_name)//метод разбиения строки на подстроки:фамилия , имя , отчество.Личность может не имять отчество.
 {
-    QStringList str = f_name.split(QRegularExpression("\\s+"), Qt::SkipEmptyParts);//разбиение
+    QStringList str = full_name.split(QRegularExpression("\\s+"), Qt::SkipEmptyParts);//разбиение
     if (str.size() != 2 && str.size() != 3)//если размер строки не равен 2 , 3 ,то выводим сообщение в ошибке
     {
         throw "Error size strok";
