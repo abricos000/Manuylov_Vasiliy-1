@@ -17,9 +17,9 @@ Exception(const char* arg_message)
 
 {
 
-    message = new char[strlen(arg_message) +1 ];
+    message = new char[strlen(arg_message) +1 ];// выделяем память под сообщение об ошибке
 
-    strcpy(message,arg_message);
+    strcpy(message,arg_message);// сообщение об ошибке
 
 }
 // конструктор копирования
@@ -27,9 +27,9 @@ Exception(const Exception& arg)
 
 {
 
-    message = new char[strlen(arg.message) +1 ];
+    message = new char[strlen(arg.message) +1 ];// выделяем память под копию сообщения
 
-    strcpy(message,arg.message);
+    strcpy(message,arg.message);// копируем сообщение об ошибке
 
 }
 // деструктор
@@ -37,7 +37,7 @@ Exception(const Exception& arg)
 
 {
 
-    delete message;
+    delete message;// освобождаем память
 
 }
 
